@@ -17,7 +17,8 @@ jobs:
       - uses: webdevops/setup-helm-azure-tpl@v1
 
       - run: |
-          helm azure-tpl version    runs-on: ubuntu-latest
+          helm version
+          helm azure-tpl version
 
   helm4:
     runs-on: ubuntu-latest
@@ -30,4 +31,5 @@ jobs:
       - uses: webdevops/setup-helm-azure-tpl@v1
 
       - run: |
+          helm version
           helm azure-tpl version
