@@ -1,0 +1,33 @@
+name: helm-test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  helm3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: 3.19.2
+
+      - uses: webdevops/setup-helm-azure-tpl@v1
+
+      - run: |
+          helm azure-tpl version    runs-on: ubuntu-latest
+
+  helm4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+
+      - uses: webdevops/setup-helm-azure-tpl@v1
+
+      - run: |
+          helm azure-tpl version
